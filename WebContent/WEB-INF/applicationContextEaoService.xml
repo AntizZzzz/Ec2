@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- all common service -->
+	<bean id="autodialDetailService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.AutodialDetailServiceImpl"
+		p:autodialDetailEao-ref="autodialEao">
+	</bean>
+
+	<bean id="resourceManageService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.ResourceManageServiceImpl"
+		p:resourceManageEao-ref="resourceManageEao">
+	</bean>
+
+	<bean id="autoDialoutTaskService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.AutoDialoutTaskServiceImpl"
+		init-method="initSetAllTaskToPause" p:autoDialoutTaskEao-ref="autoDialoutTaskEao">
+	</bean>
+
+	<bean id="blackListItemService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.BlackListItemServiceImpl"
+		p:blackListItemEao-ref="blackListItemEao">
+	</bean>
+
+	<bean id="businessModelService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.BusinessModelServiceImpl"
+		p:businessModelEao-ref="businessModelEao">
+	</bean>
+
+	<bean id="callAfterHandleLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CallAfterHandleLogServiceImpl"
+		p:callAfterHandleLogEao-ref="callAfterHandleLogEao">
+	</bean>
+
+	<bean id="callStatisticOverviewService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CallStatisticOverviewServiceImpl"
+		p:callStatisticOverviewEao-ref="callStatisticOverviewEao">
+	</bean>
+
+	<bean id="cdrService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CdrServiceImpl"
+		p:cdrEao-ref="cdrEao">
+	</bean>
+
+	<bean id="cityService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CityServiceImpl"
+		p:cityEao-ref="cityEao">
+	</bean>
+
+	<bean id="commonService"
+		class="com.jiangyifen.ec2.service.common.impl.CommonServiceImpl"
+		p:commonEao-ref="commonEao">
+	</bean>
+
+	<bean id="commodityService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CommodityServiceImpl"
+		p:commonEao-ref="commonEao">
+	</bean>
+
+	<bean id="companyService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CompanyServiceImpl"
+		p:companyEao-ref="companyEao">
+	</bean>
+
+	<bean id="concurrentStaticsService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.ConcurrentStaticsServiceImpl"
+		p:concurrentStaticsEao-ref="concurrentStaticsEao">
+	</bean>
+
+	<bean id="countyService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CountyServiceImpl"
+		p:countyEao-ref="countyEao">
+	</bean>
+
+	<bean id="customerComplaintRecordStatusService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerComplaintRecordStatusServiceImpl"
+		p:customerComplaintRecordStatusEao-ref="customerComplaintRecordStatusEao">
+	</bean>
+
+	<bean id="customerComplaintRecordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerComplaintRecordServiceImpl"
+		p:customerComplaintRecordEao-ref="customerComplaintRecordEao">
+	</bean>
+
+	<bean id="customerResourceBatchService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerResourceBatchServiceImpl"
+		p:customerResourceBatchEao-ref="customerResourceBatchEao">
+	</bean>
+
+	<bean id="customerResourceDescriptionService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerResourceDescriptionServiceImpl"
+		p:customerResourceDescriptionEao-ref="customerResourceDescriptionEao">
+	</bean>
+
+	<bean id="customerSatisfactionInvestigationLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerSatisfactionInvestigationLogServiceImpl"
+		p:customerSatisfactionInvestigationLogEao-ref="customerSatisfactionInvestigationLogEao">
+	</bean>
+
+	<bean id="customerResourceService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerResourceServiceImpl"
+		p:customerResourceEao-ref="customerResourceEao">
+	</bean>
+
+	<bean id="customerServiceRecordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerServiceRecordServiceImpl"
+		p:customerServiceRecordEao-ref="customerServiceRecordEao">
+	</bean>
+
+	<bean id="customerServiceRecordStatusService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerServiceRecordStatusServiceImpl"
+		p:customerServiceRecordStatusEao-ref="customerServiceRecordStatusEao">
+	</bean>
+
+
+	<bean id="customerLevelService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerLevelServiceImpl"
+		p:customerLevelEao-ref="customerLevelEao">
+	</bean>
+
+	<bean id="customerQuestionnaireService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerQuestionnaireServiceImpl"
+		p:customerQuestionnaireEao-ref="customerQuestionnaireEao">
+	</bean>
+
+	<bean id="customerQuestionOptionsService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerQuestionOptionsServiceImpl"
+		p:customerQuestionOptionsEao-ref="customerQuestionOptionsEao">
+	</bean>
+
+
+	<bean id="customerQuestionnaireEditService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerQuestionnaireEditServiceImpl"
+		p:customerQuestionnaireEditEao-ref="customerQuestionnaireEditEao"
+		p:questionEao-ref="questionEao">
+	</bean>
+
+	<bean id="addressService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.AddressServiceImpl"
+		p:addressEao-ref="addressEao">
+	</bean>
+
+	<bean id="departmentService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.DepartmentServiceImpl"
+		p:departmentEao-ref="departmentEao">
+	</bean>
+
+	<bean id="domainService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.DomainServiceImpl"
+		p:domainEao-ref="domainEao">
+	</bean>
+
+	<bean id="ec2ConfigurationService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.Ec2ConfigurationServiceImpl"
+		p:ec2ConfigurationEao-ref="ec2ConfigurationEao">
+	</bean>
+
+	<bean id="fileTypeService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.FileTypeServiceImpl"
+		p:fileTypeEao-ref="fileTypeEao">
+	</bean>
+
+	<bean id="ivrMenuService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.IvrMenuServiceImpl"
+		p:ivrMenuEao-ref="ivrMenuEao">
+	</bean>
+
+	<bean id="ivrActionService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.IVRActionServiceImpl"
+		p:actionEao-ref="ivrActionEao">
+	</bean>
+
+	<bean id="ivrOptionService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.IVROptionServiceImpl"
+		p:ivrOptionEao-ref="ivrOptionEao">
+	</bean>
+
+	<bean id="ivrLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.IVRLogServiceImpl"
+		p:ivrLogEao-ref="ivrLogEao">
+	</bean>
+
+	<bean id="jointLicenseService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.JointLicenseServiceImpl"
+		p:jointLicenseEao-ref="jointLicenseEao">
+	</bean>
+
+	<bean id="kbInfoService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.KbInfoServiceImpl"
+		p:kbInfoEao-ref="kbInfoEao" p:kbInfoTypeEao-ref="kbInfoTypeEao" />
+
+	<bean id="kbInfoTypeService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.KbInfoTypeServiceImpl"
+		p:kbInfoTypeEao-ref="kbInfoTypeEao" />
+
+	<bean id="kickCsrLogoutSettingService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.KickCsrLogoutSettingServiceImpl"
+		p:kickCsrLogoutSettingEao-ref="kickCsrLogoutSettingEao" />
+
+	<bean id="marketingProjectService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MarketingProjectServiceImpl"
+		p:marketingProjectEao-ref="marketingProjectEao">
+	</bean>
+
+	<bean id="marketingProjectTaskService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MarketingProjectTaskServiceImpl"
+		p:marketingProjectTaskEao-ref="marketingProjectTaskEao">
+	</bean>
+
+	<bean id="messagesManageService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MessagesManageServiceImpl"
+		p:commonEao-ref="commonEao">
+	</bean>
+
+	<bean id="messageTemplateService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MessageTemplateServiceImpl"
+		p:messageTemplateEao-ref="messageTemplateEao">
+	</bean>
+
+	<bean id="meettingDetailRecordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MeettingDetailRecordServiceImpl"
+		p:meettingDetailRecordEao-ref="meettingDetailRecordEao">
+	</bean>
+
+	<bean id="migrateCustomerLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MigrateCustomerLogServiceImpl"
+		p:migrateCustomerLogEao-ref="migrateCustomerLogEao">
+	</bean>
+
+	<bean id="missCallLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MissCallLogServiceImpl"
+		p:missCallLogEao-ref="missCallLogEao">
+	</bean>
+
+	<bean id="musicOnHoldService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MusicOnHoldServiceImpl"
+		p:musicOnHoldEao-ref="musicOnHoldEao">
+	</bean>
+
+	<bean id="noticeService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.NoticeServiceImpl"
+		p:noticeEao-ref="noticeEao" p:noticeItemEao-ref="noticeItemEao">
+	</bean>
+
+	<bean id="noticeItemService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.NoticeItemServiceImpl"
+		p:noticeItemEao-ref="noticeItemEao">
+	</bean>
+
+	<bean id="orderService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.OrderServiceImpl"
+		p:commonEao-ref="commonEao">
+	</bean>
+
+	<bean id="orderdetailsService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.OrderdetailsServiceImpl"
+		p:orderdetailsEao-ref="orderdetailsEao">
+	</bean>
+
+	<bean id="outlineToIvrLinkService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.OutlineToIvrLinkServiceImpl"
+		p:outlineToIvrLinkEao-ref="outlineToIvrLinkEao">
+	</bean>
+
+	<bean id="provinceService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.ProvinceServiceImpl"
+		p:provinceEao-ref="provinceEao">
+	</bean>
+
+	<bean id="phone2PhoneSettingService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.Phone2PhoneSettingServiceImpl"
+		p:phone2PhoneSettingEao-ref="phone2PhoneSettingEao">
+	</bean>
+
+	<bean id="projectCustomerService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.ProjectCustomerServiceImpl"
+		p:projectCustomerEao-ref="projectCustomerEao">
+	</bean>
+
+	<bean id="pauseReasonService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.PauseReasonServiceImpl"
+		p:pauseReasonEao-ref="pauseReasonEao">
+	</bean>
+
+	<bean id="queueService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QueueServiceImpl"
+		p:queueEao-ref="queueEao" depends-on="springContextHolder">
+	</bean>
+
+	<bean id="queuePauseRecordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QueuePauseRecordServiceImpl"
+		p:queuePauseRecordEao-ref="queuePauseRecordEao">
+	</bean>
+
+	<bean id="queueRequestDetailService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QueueRequestDetailServiceImpl"
+		p:queueRequestDetailEao-ref="queueRequestEao">
+	</bean>
+
+	<bean id="questionnaireService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QuestionnaireServiceImpl"
+		p:questionnaireEao-ref="questionnaireEao" p:questionEao-ref="questionEao">
+	</bean>
+
+	<bean id="questionService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QuestionServiceImpl"
+		p:questionEao-ref="questionEao" p:recordFileEao-ref="recordFileEao"
+		p:customerQuestionOptionsEao-ref="customerQuestionOptionsEao">
+	</bean>
+
+	<bean id="questionTypeService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.QuestionTypeServiceImpl"
+		p:questionTypeEao-ref="questionTypeEao">
+	</bean>
+
+
+	<bean id="roleService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.RoleServiceImpl"
+		p:roleEao-ref="roleEao">
+	</bean>
+
+	<bean id="ecordFileService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.RecordFileServiceImpl"
+		p:recordFileEao-ref="recordFileEao">
+	</bean>
+
+	<bean id="sipConfigService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.SipConfigServiceImpl"
+		p:sipConfigEao-ref="sipConfigEao" p:commonEao-ref="commonEao"
+		depends-on="springContextHolder">
+	</bean>
+
+	<bean id="smsInfoService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.SmsInfoServiceImpl"
+		p:smsInfoEao-ref="smsInfoEao">
+	</bean>
+
+	<bean id="soundFileService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.SoundFileServiceImpl"
+		p:soundFileEao-ref="soundFileEao">
+	</bean>
+
+	<bean id="staticQueueMemberService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.StaticQueueMemberServiceImpl"
+		p:staticQueueMemberEao-ref="staticQueueMemberEao">
+	</bean>
+
+	<bean id="tableKeywordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.TableKeywordServiceImpl"
+		p:tableKeywordEao-ref="tableKeywordEao">
+	</bean>
+
+	<bean id="telephoneService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.TelephoneServiceImpl"
+		p:telephoneEao-ref="telephoneEao">
+	</bean>
+
+	<bean id="timersService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.TimersServiceImpl"
+		p:timersEao-ref="timersEao">
+		<!-- p:timerSchedule-ref="timerSchedule" > -->
+	</bean>
+
+	<bean id="userService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.UserServiceImpl"
+		p:userEao-ref="userEao">
+	</bean>
+
+	<bean id="userExtenPersistService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.UserExtenPersistServiceImpl"
+		p:userExtenPersistEao-ref="userExtenPersistEao">
+	</bean>
+
+	<bean id="userOutlineService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.UserOutlineServiceImpl"
+		p:userOutlineEao-ref="userOutlineEao">
+	</bean>
+
+	<bean id="userQueueService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.UserQueueServiceImpl"
+		p:userQueueEao-ref="userQueueEao">
+	</bean>
+
+	<bean id="userLoginRecordService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.UserLoginRecordServiceImpl"
+		p:userLoginRecordEao-ref="userLoginRecordEao">
+	</bean>
+
+	<bean id="workOrderService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderServiceImpl"
+		p:workOrderEao-ref="workOrderEao" p:workOrderFileService-ref="workOrderFileService"
+		p:workOrderStatusService-ref="workOrderStatusService"
+		p:workOrderOperateService-ref="workOrderOperateService">
+	</bean>
+
+	<bean id="workOrderFileService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderFileServiceImpl"
+		p:workOrderFileEao-ref="workOrderFileEao">
+	</bean>
+
+	<bean id="workOrderHandleResultService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderHandleResultServiceImpl"
+		p:workOrderHandleResultEao-ref="workOrderHandleResultEao">
+	</bean>
+
+	<bean id="workOrderOperateService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderOperateServiceImpl"
+		p:workOrderOperateEao-ref="workOrderOperateEao">
+	</bean>
+
+	<bean id="workOrderPriorityService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderPriorityServiceImpl"
+		p:workOrderPriorityEao-ref="workOrderPriorityEao">
+	</bean>
+
+	<bean id="workOrderStatusService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderStatusServiceImpl"
+		p:workOrderStatusEao-ref="workOrderStatusEao">
+	</bean>
+
+	<bean id="workOrderTypeService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkOrderTypeServiceImpl"
+		p:workOrderTypeEao-ref="workOrderTypeEao">
+	</bean>
+
+	<bean id="workflowTransferLogService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.WorkflowTransferLogServiceImpl"
+		p:workflowTransferLogEao-ref="workflowTransferLogEao">
+	</bean>
+
+	<bean id="tableInfoVoService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.TableInfoVoServiceImpl"
+		p:tableInfoVoEao-ref="tableInfoVoEao">
+	</bean>
+
+	<bean id="memoryMethodService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.MemoryMethodServiceImpl"
+		p:memoryMethodEao-ref="memoryMethodEao">
+	</bean>
+
+	<!-- 无电脑座席话机按键保存客服记录状态 -->
+	<bean id="customerServiceRecordStatusNavigationKeyService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.CustomerServiceRecordStatusNavigationKeyServiceImpl"
+		p:customerServiceRecordStatusNavigationKeyEao-ref="customerServiceRecordStatusNavigationKeyEao">
+	</bean>
+
+	<!-- 邮件发送 -->
+	<bean id="mailConfigService"
+		class="com.jiangyifen.ec2.email.service.impl.MailConfigServiceImpl"
+		p:mailConfigEao-ref="mailConfigEao"></bean>
+	<bean id="mailHistoryService"
+		class="com.jiangyifen.ec2.email.service.impl.MailHistoryServiceImpl"
+		p:mailHistoryEao-ref="mailHistoryEao"></bean>
+	<bean id="mailContactService"
+		class="com.jiangyifen.ec2.email.service.impl.MailContactServiceImpl"
+		p:mailContactEao-ref="mailContactEao"></bean>
+	<bean id="mailService" class="com.jiangyifen.ec2.email.service.impl.MailServiceImpl"
+		p:userEao-ref="userEao" p:mailConfigEao-ref="mailConfigEao"
+		p:mailContactEao-ref="mailContactEao" p:mailHistoryEao-ref="mailHistoryEao">
+	</bean>
+
+	<!-- 语音留言 -->
+	<bean id="voicemailService"
+		class="com.jiangyifen.ec2.service.eaoservice.impl.VoicemailServiceImpl"
+		p:voicemailEao-ref="voicemailEao"></bean>
+
+</beans>

@@ -1,0 +1,104 @@
+要求：
+需要开放的接口
+被动接口
+a. 4.4.1.	发起呼叫 （已提供）
+b. 4.4.2.	转接电话
+c. 4.4.3.	挂断（强拆）分机所有通话
+d. 4.4.4.	挂断（强拆）通道
+e. 4.4.5.	监听分机通话
+f.  4.4.6.	强插分机通话
+主动接口
+a. 5.1.1.	“专员路由”
+b. 5.1.2.	呼入弹屏
+
+
+
+====================>沃客装修网接口：<====================
+
+发起呼叫	
+http://{serverip}:8080/ec2/woke/dial?srcnum=800001&dstnum=15088889999
+srcnum: 主叫分机号码
+dstnum：被叫手机或固话号码
+
+挂断电话
+http://{serverip}:8080/ec2/woke/hangup?extennum=800001
+extennum：要挂断的分机号码
+
+转接电话
+http://{serverip}:8080/ec2/woke/transfer?extennum=800001&dstnum=800002
+extennum：要转接的分机号码
+dstnum：转接到的目的分机号码
+
+监听电话
+http://{serverip}:8080/ec2/woke/channelspy?spyedextennum=800001&spyextennum=800002
+spyedextennum：要监听的分机号码
+spyextennum：使用哪个分机来监听
+
+强插电话
+http://{serverip}:8080/ec2/woke/wisperchannelspy?spyedextennum=800001&spyextennum=800002
+spyedextennum：要监听的分机号码
+spyextennum：使用哪个分机来监听（含有说话的功能）
+
+====================>沃客装修网弹屏与专员路由：<====================
+对方提供的url?extennum=800001&calleridnum=15088889999
+extennum: 哪个分机在振铃
+calleridnum：主叫号码是多少
+
+对方提供的url?extennum=800001&calleridnum=15088889999
+extennum: 哪个分机在振铃
+calleridnum：主叫号码是多少
+
+对方提供的url?phonenum=15088889999&outlinenum=88860170000
+phonenum：来电号码
+outlinenum：来电外线
+返回：约定的目的队列或分机
+
+====================>沃客装修网数据库开放的表结构：<====================
+数据库类型：postgresql 
+端口：5432
+用户名：asterisk
+密码： asterisk
+
+数据库： asterisk
+表名称： cdr
+
+字段描述：
+src, 主叫号码     character varying(64)
+destination, 被叫号码    character varying(32)
+cdrdirection, 呼叫方向   integer  ("内部", 0),("呼出", 1),("呼入",2),("外转外",3);
+isbridged, 是否接通  boolean  
+starttimedate, 开始时间  timestamp without time zone
+answertimedate, 应答时间 timestamp without time zone
+bridgetimedate, 接通时间 timestamp without time zone
+endtimedate, 结束时间 timestamp without time zone
+duration, 持续时长 integer
+ec2_billableseconds, 计费时长 integer  这个不是很准，供参考，以vos为准
+
+SQL语句：
+select src,destination,cdrdirection,isbridged,starttimedate,answertimedate,bridgetimedate,endtimedate,duration,ec2_billableseconds from cdr; 	
+
+
+====================>沃客装修网修改extensions.conf ：<====================
+extensions.conf 中添加：
+;;;; wisper channel spy ;;;; chb added
+exten => _556x.,1,Answer()
+exten => _556x.,n,ChanSpy(SIP/${EXTEN:3},EqsSw)
+exten => _556x.,n,Hangup()
+
+
+调试时候再添加
+在incoming中添加如下：
+exten => _x.,n,Agi(agi://${AGISERVERADDR}/wokerouter.agi) ;woke specific router
+
+
+++++++++++++++++++++++++++++++++++
+++++++++++++++升级+++++++++++++++++
+++++++++++++++++++++++++++++++++++
+1、修改extension
+2、com.jiangyifen.ec2.ami.NewStateEventListener 修改
+3、com.jiangyifen.ec2.fastagi.WokeSperouter 添加
+4、com.jiangyifen.ec2.servlet.woke 包中所有添加
+5、com.jiangyifen.ec2.servlet.woke.other 包中所有添加
+6、applicationContextServiceAgiAmi.xml 修改或升级
+7、web.xml 修改或升级
+ 

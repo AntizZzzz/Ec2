@@ -1,0 +1,79 @@
+1、安装asterisk11、数据库等软件
+2、更改数据库连接配置
+3、修改manager.conf
+[general]
+enabled = yes
+
+[manager]
+secret=123456
+read=all,system,call,log,verbose,command,agent,user,config
+write=all,system,call,log,verbose,command,agent,user,config
+permit=0.0.0.0/0.0.0.0
+
+4、更新asterisk配置文件
+在sip.conf中添加  （每次添加包含就同时创建未包含的文件）
+;;;;;;;;;;; ec2 registry ;;;;;;;;;;;;;;;;
+#include sip_register.conf
+;;;;;;;;;;; ec2 registry ;;;;;;;;;;;;;;;;
+
+#include sip_exten.conf
+#include sip_outline.conf
+
+在 sip_exten.conf 中添加 #include "sip_exten_default.conf"  
+在 sip_outline.conf 中添加 #include "sip_outline_default.conf"
+在 sip_register.conf 中添加 #include "sip_register_default.conf"
+
+
+在queues.conf 中添加 #include queues_domain.conf
+在queues_domain.conf 中添加#include queues_domain_default.conf
+
+
+在musiconhold.conf 中添加 #include musiconhold_domain.conf
+在musiconhold_domain.conf 中添加#include queues_domain_default.conf
+
+
+在meetme.conf 中添加 #include meetme_domain.conf
+在meetme_domain.conf 中添加#include meetme_domain_default.conf
+
+
+
+5、
+将实体SipConfig nat的注解改为  
+@Size(min = 0, max = 50)
+@Column(columnDefinition="character varying(50) NOT NULL DEFAULT 'yes'", nullable = false)
+private String nat = "force_rport,comedia";			// asterisk 拥有
+
+private String autocomedia; //chb 添加
+private String autoforcerport; //chb 添加
+private String comedia; //chb 添加
+
+
+6、
+改动 
+SipConfig
+ProjectResourceConsumer
+GlobalData
+AddExten
+EditExten
+AddOutline
+EditOutline
+MeetMeDetailSupervise
+QueueStatusSupervise
+PeerEntryEvent
+
+7、
+persistence.xml
+config.properties
+
+
+
+
+
+
+
+
+
+
+
+
+

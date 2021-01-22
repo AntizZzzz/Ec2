@@ -1,0 +1,288 @@
+queue remove member SIP/101101@800002  from 900005        101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+
+queue remove member SIP/102@800002  from 900005
+queue remove member SIP/103@800002  from 900005
+queue remove member SIP/104@800002  from 900005
+queue remove member SIP/105@800002  from 900005
+queue remove member SIP/106@800002  from 900005
+queue remove member SIP/107@800002  from 900005
+queue remove member SIP/108@800002  from 900005
+queue remove member SIP/109@800002  from 900005
+queue remove member SIP/110@800002  from 900005
+queue remove member SIP/111@800002  from 900005
+queue remove member SIP/112@800002  from 900005
+queue remove member SIP/113@800002  from 900005
+queue remove member SIP/114@800002  from 900005
+queue remove member SIP/115@800002  from 900005
+queue remove member SIP/116@800002  from 900005
+queue remove member SIP/117@800002  from 900005
+queue remove member SIP/118@800002  from 900005
+queue remove member SIP/119@800002  from 900005
+queue remove member SIP/120@800002  from 900005
+queue remove member SIP/121@800002  from 900005
+queue remove member SIP/122@800002  from 900005
+queue remove member SIP/123@800002  from 900005
+queue remove member SIP/124@800002  from 900005
+queue remove member SIP/125@800002  from 900005
+queue remove member SIP/126@800002  from 900005
+queue remove member SIP/127@800002  from 900005
+queue remove member SIP/128@800002  from 900005
+queue remove member SIP/129@800002  from 900005
+queue remove member SIP/130@800002  from 900005
+queue remove member SIP/131@800002  from 900005
+queue remove member SIP/132@800002  from 900005
+queue remove member SIP/133@800002  from 900005
+queue remove member SIP/134@800002  from 900005
+queue remove member SIP/135@800002  from 900005
+queue remove member SIP/136@800002  from 900005
+queue remove member SIP/137@800002  from 900005
+queue remove member SIP/138@800002  from 900005
+queue remove member SIP/139@800002  from 900005
+queue remove member SIP/140@800002  from 900005
+queue remove member SIP/141@800002  from 900005
+queue remove member SIP/142@800002  from 900005
+queue remove member SIP/143@800002  from 900005
+queue remove member SIP/144@800002  from 900005
+queue remove member SIP/145@800002  from 900005
+queue remove member SIP/146@800002  from 900005
+queue remove member SIP/147@800002  from 900005
+queue remove member SIP/148@800002  from 900005
+queue remove member SIP/149@800002  from 900005
+queue remove member SIP/150@800002  from 900005
+queue remove member SIP/151@800002  from 900005
+queue remove member SIP/152@800002  from 900005
+queue remove member SIP/153@800002  from 900005
+queue remove member SIP/154@800002  from 900005
+queue remove member SIP/155@800002  from 900005
+queue remove member SIP/156@800002  from 900005
+queue remove member SIP/157@800002  from 900005
+queue remove member SIP/158@800002  from 900005
+queue remove member SIP/159@800002  from 900005
+queue remove member SIP/160@800002  from 900005
+queue remove member SIP/161@800002  from 900005
+queue remove member SIP/162@800002  from 900005
+queue remove member SIP/163@800002  from 900005
+queue remove member SIP/164@800002  from 900005
+queue remove member SIP/165@800002  from 900005
+queue remove member SIP/166@800002  from 900005
+queue remove member SIP/167@800002  from 900005
+queue remove member SIP/168@800002  from 900005
+queue remove member SIP/169@800002  from 900005
+queue remove member SIP/170@800002  from 900005
+queue remove member SIP/171@800002  from 900005
+queue remove member SIP/172@800002  from 900005
+queue remove member SIP/173@800002  from 900005
+queue remove member SIP/174@800002  from 900005
+queue remove member SIP/175@800002  from 900005
+queue remove member SIP/176@800002  from 900005
+queue remove member SIP/177@800002  from 900005
+queue remove member SIP/178@800002  from 900005
+queue remove member SIP/179@800002  from 900005
+queue remove member SIP/180@800002  from 900005
+queue remove member SIP/181@800002  from 900005
+queue remove member SIP/182@800002  from 900005
+queue remove member SIP/183@800002  from 900005
+queue remove member SIP/184@800002  from 900005
+queue remove member SIP/185@800002  from 900005
+queue remove member SIP/186@800002  from 900005
+queue remove member SIP/187@800002  from 900005
+queue remove member SIP/188@800002  from 900005
+queue remove member SIP/189@800002  from 900005
+queue remove member SIP/190@800002  from 900005
+queue remove member SIP/191@800002  from 900005
+queue remove member SIP/192@800002  from 900005
+queue remove member SIP/193@800002  from 900005
+queue remove member SIP/194@800002  from 900005
+queue remove member SIP/195@800002  from 900005
+queue remove member SIP/196@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+queue remove member SIP/@800002  from 900005
+
+
+
+   
+    

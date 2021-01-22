@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+	<!-- abstract baseEao -->
+	<bean id="abstractEao" abstract="true" p:entityManager-ref="entityManager" />
+
+	<bean id="baseEao" class="com.jiangyifen.ec2.eao.impl.BaseEaoImpl"
+		parent="abstractEao" />
+
+	<!-- other eaos -->
+	<bean id="addressEao" class="com.jiangyifen.ec2.eao.impl.AddressEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="autodialEao" class="com.jiangyifen.ec2.eao.impl.AutodialDetailEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="resourceManageEao" class="com.jiangyifen.ec2.eao.impl.ResourceManageEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="autoDialoutTaskEao" class="com.jiangyifen.ec2.eao.impl.AutoDialoutTaskEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="blackListItemEao" class="com.jiangyifen.ec2.eao.impl.BlackListItemEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="businessModelEao" class="com.jiangyifen.ec2.eao.impl.BusinessModelEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="callAfterHandleLogEao" class="com.jiangyifen.ec2.eao.impl.CallAfterHandleLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="callStatisticOverviewEao" class="com.jiangyifen.ec2.eao.impl.CallStatisticOverviewEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="cdrEao" class="com.jiangyifen.ec2.eao.impl.CdrEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="cityEao" class="com.jiangyifen.ec2.eao.impl.CityEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="commonEao" class="com.jiangyifen.ec2.eao.impl.CommonEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="companyEao" class="com.jiangyifen.ec2.eao.impl.CompanyEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="concurrentStaticsEao" class="com.jiangyifen.ec2.eao.impl.ConcurrentStaticsEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="countyEao" class="com.jiangyifen.ec2.eao.impl.CountyEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerComplaintRecordEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerComplaintRecordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerComplaintRecordStatusEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerComplaintRecordStatusEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerResourceBatchEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerResourceBatchEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerResourceDescriptionEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerResourceDescriptionEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerResourceEao" class="com.jiangyifen.ec2.eao.impl.CustomerResourceEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerSatisfactionInvestigationLogEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerSatisfactionInvestigationLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerServiceRecordEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerServiceRecordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerServiceRecordStatusEao"
+		class="com.jiangyifen.ec2.eao.impl.CustomerServiceRecordStatusEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerLevelEao" class="com.jiangyifen.ec2.eao.impl.CustomerLevelEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerQuestionnaireEao" class="com.jiangyifen.ec2.eao.impl.CustomerQuestionnaireEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerQuestionOptionsEao" class="com.jiangyifen.ec2.eao.impl.CustomerQuestionOptionsEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="customerQuestionnaireEditEao" class="com.jiangyifen.ec2.eao.impl.CustomerQuestionnaireEditEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="departmentEao" class="com.jiangyifen.ec2.eao.impl.DepartmentEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="domainEao" class="com.jiangyifen.ec2.eao.impl.DomainEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="ec2ConfigurationEao" class="com.jiangyifen.ec2.eao.impl.Ec2ConfigurationEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="fileTypeEao" class="com.jiangyifen.ec2.eao.impl.FileTypeEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="ivrMenuEao" class="com.jiangyifen.ec2.eao.impl.IvrMenuEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="ivrActionEao" class="com.jiangyifen.ec2.eao.impl.IVRActionEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="ivrOptionEao" class="com.jiangyifen.ec2.eao.impl.IVROptionEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="ivrLogEao" class="com.jiangyifen.ec2.eao.impl.IVRLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="jointLicenseEao" class="com.jiangyifen.ec2.eao.impl.JointLicenseEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="kbInfoEao" class="com.jiangyifen.ec2.eao.impl.KbInfoEaoImpl"
+		parent="abstractEao" />	
+		
+	<bean id="kbInfoTypeEao" class="com.jiangyifen.ec2.eao.impl.KbInfoTypeEaoImpl"
+		parent="abstractEao" />	
+		
+	<bean id="kickCsrLogoutSettingEao" class="com.jiangyifen.ec2.eao.impl.KickCsrLogoutSettingEaoImpl"
+		parent="abstractEao" />	
+		
+	<bean id="marketingProjectEao" class="com.jiangyifen.ec2.eao.impl.MarketingProjectEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="marketingProjectTaskEao" class="com.jiangyifen.ec2.eao.impl.MarketingProjectTaskEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="messageTemplateEao" class="com.jiangyifen.ec2.eao.impl.MessageTemplateEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="meettingDetailRecordEao" class="com.jiangyifen.ec2.eao.impl.MeettingDetailRecordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="migrateCustomerLogEao" class="com.jiangyifen.ec2.eao.impl.MigrateCustomerLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="missCallLogEao" class="com.jiangyifen.ec2.eao.impl.MissCallLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="musicOnHoldEao" class="com.jiangyifen.ec2.eao.impl.MusicOnHoldEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="noticeEao" class="com.jiangyifen.ec2.eao.impl.NoticeEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="noticeItemEao" class="com.jiangyifen.ec2.eao.impl.NoticeItemEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="orderdetailsEao" class="com.jiangyifen.ec2.eao.impl.OrderdetailsEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="outlineToIvrLinkEao" class="com.jiangyifen.ec2.eao.impl.OutlineToIvrLinkEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="provinceEao" class="com.jiangyifen.ec2.eao.impl.ProvinceEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="phone2PhoneSettingEao" class="com.jiangyifen.ec2.eao.impl.Phone2PhoneSettingEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="projectCustomerEao" class="com.jiangyifen.ec2.eao.impl.ProjectCustomerEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="pauseReasonEao" class="com.jiangyifen.ec2.eao.impl.PauseReasonEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="queueEao" class="com.jiangyifen.ec2.eao.impl.QueueEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="queuePauseRecordEao" class="com.jiangyifen.ec2.eao.impl.QueuePauseRecordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="queueRequestEao" class="com.jiangyifen.ec2.eao.impl.QueueRequestDetailEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="questionnaireEao" class="com.jiangyifen.ec2.eao.impl.QuestionnaireEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="questionEao" class="com.jiangyifen.ec2.eao.impl.QuestionEaoImpl"
+		parent="abstractEao" />
+	<bean id="questionTypeEao" class="com.jiangyifen.ec2.eao.impl.QuestionTypeEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="reportEao" class="com.jiangyifen.ec2.eao.impl.ReportEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="roleEao" class="com.jiangyifen.ec2.eao.impl.RoleEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="recordFileEao" class="com.jiangyifen.ec2.eao.impl.RecordFileEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="sipConfigEao" class="com.jiangyifen.ec2.eao.impl.SipConfigEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="smsInfoEao" class="com.jiangyifen.ec2.eao.impl.SmsInfoEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="soundFileEao" class="com.jiangyifen.ec2.eao.impl.SoundFileEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="staticQueueMemberEao" class="com.jiangyifen.ec2.eao.impl.StaticQueueMemberEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="tableKeywordEao" class="com.jiangyifen.ec2.eao.impl.TableKeywordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="telephoneEao" class="com.jiangyifen.ec2.eao.impl.TelephoneEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="timersEao" class="com.jiangyifen.ec2.eao.impl.TimersEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="userEao" class="com.jiangyifen.ec2.eao.impl.UserEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="userExtenPersistEao" class="com.jiangyifen.ec2.eao.impl.UserExtenPersistEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="userOutlineEao" class="com.jiangyifen.ec2.eao.impl.UserOutlineEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="userQueueEao" class="com.jiangyifen.ec2.eao.impl.UserQueueEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="userLoginRecordEao" class="com.jiangyifen.ec2.eao.impl.UserLoginRecordEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderFileEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderFileEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderHandleResultEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderHandleResultEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderOperateEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderOperateEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderPriorityEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderPriorityEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderStatusEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderStatusEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workOrderTypeEao" class="com.jiangyifen.ec2.eao.impl.WorkOrderTypeEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="workflowTransferLogEao" class="com.jiangyifen.ec2.eao.impl.WorkflowTransferLogEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="tableInfoVoEao" class="com.jiangyifen.ec2.eao.impl.TableInfoVoEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="memoryMethodEao" class="com.jiangyifen.ec2.eao.impl.MemoryMethodEaoImpl"
+		parent="abstractEao" />
+		
+	<bean id="outlinePoolEao" class="com.jiangyifen.ec2.eao.impl.OutlinePoolEaoImpl"
+        parent="abstractEao" />
+	
+	<bean id="outlinePoolOutlineLinkEao" class="com.jiangyifen.ec2.eao.impl.OutlinePoolOutlineLinkEaoImpl"
+        parent="abstractEao" />
+	
+	<!-- 无电脑座席话机按键保存客服记录状态 -->
+	<bean id="customerServiceRecordStatusNavigationKeyEao" class="com.jiangyifen.ec2.eao.impl.CustomerServiceRecordStatusNavigationKeyEaoImpl" parent="abstractEao" />
+	
+	<!-- 邮件发送 -->
+	<bean id="mailConfigEao" class="com.jiangyifen.ec2.email.eao.impl.MailConfigEaoImpl" parent="abstractEao" />
+	<bean id="mailContactEao" class="com.jiangyifen.ec2.email.eao.impl.MailContactEaoImpl" parent="abstractEao" />
+	<bean id="mailHistoryEao" class="com.jiangyifen.ec2.email.eao.impl.MailHistoryEaoImpl" parent="abstractEao" />
+	
+	<!-- 语音留言 -->
+	<bean id="voicemailEao" class="com.jiangyifen.ec2.eao.impl.VoicemailEaoImpl" parent="abstractEao" />
+	 
+</beans>

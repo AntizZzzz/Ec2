@@ -1,0 +1,56 @@
+
+--------------------------------
+// 主叫 60847042
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-18 19:48:25',callerid='02160847042',state='Down',channelstate='0',calleridname=null,uniqueid='1384775297.12',context='incoming',exten='88860847041',calleridnum='02160847042',channel='SIP/88860847041-0000000c',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:48:25',connectedlinename=null,callerid='02160847042',state='Ring',channelstate='4',calleridname=null,uniqueid='1384775297.12',connectedlinenum=null,calleridnum='02160847042',channel='SIP/88860847041-0000000c',channelstatedesc='Ring']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:48:25',connectedlinename=null,callerid='02160847042',state='Up',channelstate='6',calleridname=null,uniqueid='1384775297.12',connectedlinenum=null,calleridnum='02160847042',channel='SIP/88860847041-0000000c',channelstatedesc='Up']
+
+// 被叫 800001 未接 挂断
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-18 19:48:27',callerid=null,state='Down',channelstate='0',calleridname=null,uniqueid='1384775299.13',context='outgoing',exten=null,calleridnum=null,channel='SIP/800001-0000000d',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:48:27',connectedlinename=null,callerid=null,state='Ringing',channelstate='5',calleridname=null,uniqueid='1384775299.13',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800001-0000000d',channelstatedesc='Ringing']
+hangup event      ===>  HangupEvent[dateReceived='2013-11-18 19:48:57',connectedlinename=null,causetxt='Normal Clearing',callerid=null,cause='16',calleridname=null,uniqueid='1384775299.13',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800001-0000000d']
+--------------------------------              --------------------------------
+
+
+// 被叫 800003 未接 挂断
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-18 19:48:58',callerid=null,state='Down',channelstate='0',calleridname=null,uniqueid='1384775330.14',context='outgoing',exten=null,calleridnum=null,channel='SIP/800003-0000000e',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:49:00',connectedlinename=null,callerid=null,state='Ringing',channelstate='5',calleridname=null,uniqueid='1384775330.14',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800003-0000000e',channelstatedesc='Ringing']
+hangup event      ===>  HangupEvent[dateReceived='2013-11-18 19:49:28',connectedlinename=null,causetxt='Normal Clearing',callerid=null,cause='16',calleridname=null,uniqueid='1384775330.14',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800003-0000000e']
+--------------------------------              --------------------------------
+
+
+// 被叫 800001 接起
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-18 19:49:29',callerid=null,state='Down',channelstate='0',calleridname=null,uniqueid='1384775361.15',context='outgoing',exten=null,calleridnum=null,channel='SIP/800001-0000000f',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:49:29',connectedlinename=null,callerid=null,state='Ringing',channelstate='5',calleridname=null,uniqueid='1384775361.15',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800001-0000000f',channelstatedesc='Ringing']
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-18 19:49:37',connectedlinename=null,callerid=null,state='Up',channelstate='6',calleridname=null,uniqueid='1384775361.15',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800001-0000000f',channelstatedesc='Up']
+
+// 主叫 60847042 跟 被叫 800001 建立通话
+BridgeEvent       ===>  BridgeEvent[dateReceived='2013-11-18 19:49:37',uniqueid1='1384775297.12',uniqueid2='1384775361.15',bridgestate='Link',bridgetype='core',channel1='SIP/88860847041-0000000c',channel2='SIP/800001-0000000f',callerid1='02160847042',callerid2=null]
+
+// 被叫 800001 挂断
+hangup event      ===>  HangupEvent[dateReceived='2013-11-18 19:52:50',connectedlinename=null,causetxt='Normal Clearing',callerid=null,cause='16',calleridname=null,uniqueid='1384775361.15',connectedlinenum='02160847042',calleridnum=null,channel='SIP/800001-0000000f']
+// 主叫 60847042 挂断
+hangup event      ===>  HangupEvent[dateReceived='2013-11-18 19:52:50',connectedlinename=null,causetxt='Normal Clearing',callerid='02160847042',cause='16',calleridname=null,uniqueid='1384775297.12',connectedlinenum=null,calleridnum='02160847042',channel='SIP/88860847041-0000000c']
+--------------------------------              --------------------------------
+
+
+
+// 【呼出】
+--------------------------------
+// 主叫 800001
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-19 10:45:56',callerid='800001',state='Down',channelstate='0',calleridname='800001',uniqueid='1384829156.32',context='outgoing',exten='13816760398',calleridnum='800001',channel='SIP/800001-00000020',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent  [dateReceived='2013-11-19 10:45:56',callerid='800001',state='Ring',channelstate='4',calleridname='800001',uniqueid='1384829156.32',calleridnum='800001',channel='SIP/800001-00000020',channelstatedesc='Ring']
+
+// 被叫 13816760398
+New Channel Event ===>  NewChannelEvent[dateReceived='2013-11-19 10:45:57',state='Down',channelstate='0',uniqueid='1384829157.33',context='incoming',exten=null,calleridnum=null,channel='SIP/88860847041-00000021',channelstatedesc='Down']
+NewStateEvent     ===>  NewStateEvent  [dateReceived='2013-11-19 10:46:06',connectedlinename='800001',callerid='13816760398',state='Up',channelstate='6',uniqueid='1384829157.33',connectedlinenum='800001',calleridnum='13816760398',channel='SIP/88860847041-00000021',channelstatedesc='Up']
+
+NewStateEvent     ===>  NewStateEvent[dateReceived='2013-11-19 10:46:06',callerid='800001',state='Up',channelstate='6',calleridname='800001',uniqueid='1384829156.32',calleridnum='800001',channel='SIP/800001-00000020',channelstatedesc='Up',systemHashcode=703110334]
+BridgeEvent       ===>  BridgeEvent  [dateReceived='2013-11-19 10:46:06',uniqueid1='1384829156.32',uniqueid2='1384829157.33',bridgestate='Link',bridgetype='core',channel1='SIP/800001-00000020',channel2='SIP/88860847041-00000021',callerid1='800001',callerid2='13816760398']
+
+--------------------------------              --------------------------------
+hangup event      ===>  HangupEvent[dateReceived='2013-11-19 10:46:13',connectedlinename='800001',causetxt='Normal Clearing',callerid='13816760398',cause='16',uniqueid='1384829157.33',connectedlinenum='800001',calleridnum='13816760398',channel='SIP/88860847041-00000021']
+hangup event      ===>  HangupEvent[dateReceived='2013-11-19 10:46:13',causetxt='Normal Clearing',callerid='800001',cause='16',calleridname='800001',uniqueid='1384829156.32',calleridnum='800001',channel='SIP/800001-00000020']
+--------------------------------              --------------------------------
+
+

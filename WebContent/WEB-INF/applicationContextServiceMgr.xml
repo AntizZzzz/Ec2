@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Mgr part -->
+<!-- 	<bean id="importResourceService" class="com.jiangyifen.ec2.service.mgr.impl.ImportResourceServiceImpl"> -->
+	<bean id="importResourceService" class="com.jiangyifen.ec2.service.mgr.impl.ImportResourceServiceImpl2">
+		<property name="customerResourceBatchEao" ref="customerResourceBatchEao"></property>
+		<property name="marketingProjectTaskEao" ref="marketingProjectTaskEao"></property>
+		<property name="customerResourceEao" ref="customerResourceEao"></property>
+		<property name="customerResourceDescriptionEao" ref="customerResourceDescriptionEao"></property>
+		<property name="tableKeywordEao" ref="tableKeywordEao"></property>
+		<property name="telephoneEao" ref="telephoneEao"></property>
+		<property name="companyEao" ref="companyEao"></property>
+		<property name="addressEao" ref="addressEao"></property>
+		<property name="commonEao" ref="commonEao"></property>
+	</bean>
+
+	<bean id="assignProjectToCsrService"
+		class="com.jiangyifen.ec2.service.mgr.impl.AssignProjectToCsrServiceImpl">
+		<property name="userEao" ref="userEao"></property>
+		<property name="marketingProjectEao" ref="marketingProjectEao"></property>
+	</bean>
+
+	<bean id="distributeResourceToProjecService"
+		class="com.jiangyifen.ec2.service.mgr.impl.DistributeResourceToProjecServiceImpl">
+		<property name="customerResourceBatchEao" ref="customerResourceBatchEao"></property>
+		<property name="marketingProjectEao" ref="marketingProjectEao"></property>
+		<property name="marketingProjectTaskEao" ref="marketingProjectTaskEao"></property>
+		<property name="customerResourceEao" ref="customerResourceEao"></property>
+		<property name="commonEao" ref="commonEao"></property>
+	</bean>
+
+	<bean id="distributeToTaskService"
+		class="com.jiangyifen.ec2.service.mgr.impl.DistributeToTaskServiceImpl">
+		<property name="marketingProjectTaskEao" ref="marketingProjectTaskEao"></property>
+		<property name="marketingProjectEao" ref="marketingProjectEao"></property>
+		<property name="commonEao" ref="commonEao"></property>
+	</bean>
+
+	<bean id="migrateCustomerToCsrService"
+		class="com.jiangyifen.ec2.service.mgr.impl.MigrateCustomerToCsrServiceImpl">
+		<property name="customerResourceEao" ref="customerResourceEao"></property>
+		<property name="migrateCustomerLogEao" ref="migrateCustomerLogEao"></property>
+	</bean>
+	
+	<bean id="outlinePoolOutlineLinkService"
+        class="com.jiangyifen.ec2.service.eaoservice.impl.OutlinePoolOutlineLinkServiceImpl">
+        <property name="outlinePoolOutlineLinkEao" ref="outlinePoolOutlineLinkEao"></property>
+    </bean>
+    
+    <bean id="outlinePoolService"
+        class="com.jiangyifen.ec2.service.eaoservice.impl.OutlinePoolServiceImpl">
+        <property name="outlinePoolEao" ref="outlinePoolEao"></property>
+        <property name="commonEao" ref="commonEao"></property>
+    </bean>
+
+	<bean id="lucenceService" class="com.jiangyifen.ec2.service.mgr.impl.LucenceServiceImpl">
+	</bean>
+
+	<bean id="reportService" class="com.jiangyifen.ec2.service.mgr.impl.ReportServiceImpl"
+		p:reportEao-ref="reportEao">
+	</bean>
+
+	<!-- report bean -->
+	<bean id="employeeLogin" class="com.jiangyifen.ec2.report.EmployeeLoginMiddleTable"
+		depends-on="springContextHolder" />
+
+	<bean id="employeeBusyMiddleTable" class="com.jiangyifen.ec2.report.EmployeeBusyMiddleTable"
+		depends-on="springContextHolder" />
+
+	<!-- <bean id="callCheckMiddleTable" class="com.jiangyifen.ec2.report.CallCheckMiddleTable" depends-on="springContextHolder" /> -->
+
+	<bean id="queueDetailMiddleTable" class="com.jiangyifen.ec2.report.QueueDetailMiddleTable"
+		depends-on="springContextHolder" />
+
+	<bean id="autodialDetailMiddleTable" class="com.jiangyifen.ec2.report.AutodialDetailMiddleTable"
+		depends-on="springContextHolder" />
+
+	<bean id="customerSatisfactionInvestigateMiddleTable"
+		class="com.jiangyifen.ec2.report.CustomerSatisfactionInvestigateMiddleTable"
+		depends-on="springContextHolder" />
+
+	<bean id="callStatisticOverviewMiddleTable"
+		class="com.jiangyifen.ec2.report.CallStatisticOverviewMiddleTable"
+		depends-on="springContextHolder" />
+
+
+</beans>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="ec2" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- basic entity -->
+		<class>com.jiangyifen.ec2.entity.Address</class>
+		<class>com.jiangyifen.ec2.entity.AutoDialoutTask</class>
+		<class>com.jiangyifen.ec2.entity.BusinessModel</class>
+		<class>com.jiangyifen.ec2.entity.BlackListItem</class>
+		<class>com.jiangyifen.ec2.entity.CallAfterHandleLog</class>
+		<class>com.jiangyifen.ec2.entity.CallRecord</class>
+		<class>com.jiangyifen.ec2.entity.Cdr</class>
+		<class>com.jiangyifen.ec2.entity.City</class>
+		<class>com.jiangyifen.ec2.entity.Commodity</class>
+		<class>com.jiangyifen.ec2.entity.Company</class>
+		<class>com.jiangyifen.ec2.entity.ConcurrentStatics</class>
+		<class>com.jiangyifen.ec2.entity.County</class>
+		<class>com.jiangyifen.ec2.entity.CustomerComplaintRecord</class>
+		<class>com.jiangyifen.ec2.entity.CustomerComplaintRecordStatus</class>
+		<class>com.jiangyifen.ec2.entity.CustomerResource</class>
+		<class>com.jiangyifen.ec2.entity.CustomerResourceBatch</class>
+		<class>com.jiangyifen.ec2.entity.CustomerResourceDescription</class>
+		<class>com.jiangyifen.ec2.entity.CustomerResourceDescriptionKey</class>
+		<class>com.jiangyifen.ec2.entity.CustomerSatisfactionInvestigationLog</class>
+		<class>com.jiangyifen.ec2.entity.CustomerServiceRecord</class>
+		<class>com.jiangyifen.ec2.entity.CustomerServiceRecordStatus</class>
+		<class>com.jiangyifen.ec2.entity.CustomerServiceRecordStatusNavigationKey</class>
+		<class>com.jiangyifen.ec2.entity.CustomerLevel</class>
+		<class>com.jiangyifen.ec2.entity.Department</class>
+		<class>com.jiangyifen.ec2.entity.Domain</class>
+		<class>com.jiangyifen.ec2.entity.Ec2Configuration</class>
+		<class>com.jiangyifen.ec2.entity.IVRAction</class>
+		<class>com.jiangyifen.ec2.entity.IVRMenu</class>
+		<class>com.jiangyifen.ec2.entity.IVROption</class>
+		<class>com.jiangyifen.ec2.entity.IVRLog</class>
+		<class>com.jiangyifen.ec2.entity.JointLicense</class>
+		<class>com.jiangyifen.ec2.entity.Knowledge</class>
+		<class>com.jiangyifen.ec2.entity.MarketingProject</class>
+		<class>com.jiangyifen.ec2.entity.MarketingProjectTask</class>
+		<class>com.jiangyifen.ec2.entity.MeettingDetailRecord</class>
+		<class>com.jiangyifen.ec2.entity.MemoryMethod</class>		
+		<class>com.jiangyifen.ec2.entity.MessageTemplate</class>
+		<class>com.jiangyifen.ec2.entity.Message</class>
+		<class>com.jiangyifen.ec2.entity.MigrateCustomerLog</class>
+		<class>com.jiangyifen.ec2.entity.MissCallLog</class>
+		<class>com.jiangyifen.ec2.entity.MobileLoc</class>
+		<class>com.jiangyifen.ec2.entity.MusicOnHold</class>
+		<class>com.jiangyifen.ec2.entity.Notice</class>
+		<class>com.jiangyifen.ec2.entity.NoticeItem</class>
+		<class>com.jiangyifen.ec2.entity.Order</class>
+		<class>com.jiangyifen.ec2.entity.Orderdetails</class>
+		<class>com.jiangyifen.ec2.entity.OrderLog</class>
+		<class>com.jiangyifen.ec2.entity.OperationLog</class>
+		<class>com.jiangyifen.ec2.entity.Outline2BlacklistItemLink</class>
+		<class>com.jiangyifen.ec2.entity.OutlineToIvrLink</class>
+		<class>com.jiangyifen.ec2.entity.PauseReason</class>
+		<class>com.jiangyifen.ec2.entity.Province</class>
+		<class>com.jiangyifen.ec2.entity.Phone2PhoneSetting</class>
+		<class>com.jiangyifen.ec2.entity.ProjectCustomer</class>
+		<class>com.jiangyifen.ec2.entity.ProjectToCommodityLink</class>
+		<class>com.jiangyifen.ec2.entity.Queue</class>
+		<class>com.jiangyifen.ec2.entity.QueuePauseRecord</class>
+		<class>com.jiangyifen.ec2.entity.QueueRequestDetail</class>
+		<class>com.jiangyifen.ec2.entity.Role</class>
+		<class>com.jiangyifen.ec2.entity.RecordFile</class>
+		<class>com.jiangyifen.ec2.entity.ServiceRecordStatus2DepartmentLink</class>
+		<class>com.jiangyifen.ec2.entity.SipConfig</class>
+		<class>com.jiangyifen.ec2.entity.SmsInfo</class>
+		<class>com.jiangyifen.ec2.entity.SmsLog</class>
+		<class>com.jiangyifen.ec2.entity.SmsPhoneNumber</class>
+		<class>com.jiangyifen.ec2.entity.SoundFile</class>
+		<class>com.jiangyifen.ec2.entity.StaticQueueMember</class>
+		<class>com.jiangyifen.ec2.entity.TableKeyword</class>
+		<class>com.jiangyifen.ec2.entity.Telephone</class>
+		<class>com.jiangyifen.ec2.entity.Timers</class>
+		<class>com.jiangyifen.ec2.entity.User</class>
+		<class>com.jiangyifen.ec2.entity.UserExtenPersist</class>
+		<class>com.jiangyifen.ec2.entity.UserOutline</class>
+		<class>com.jiangyifen.ec2.entity.UserQueue</class>
+		<class>com.jiangyifen.ec2.entity.UserLoginRecord</class>
+		<class>com.jiangyifen.ec2.entity.Voicemail</class>
+
+		<class>com.jiangyifen.ec2.entity.Questionnaire</class>
+		<class>com.jiangyifen.ec2.entity.QuestionType</class>
+		<class>com.jiangyifen.ec2.entity.Question</class>
+		<class>com.jiangyifen.ec2.entity.QuestionOptions</class>
+		<class>com.jiangyifen.ec2.entity.CustomerQuestionnaire</class>
+		<class>com.jiangyifen.ec2.entity.CustomerQuestionOptions</class>
+		
+		<class>com.jiangyifen.ec2.entity.WorkOrder</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderType</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderStatus</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderPriority</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderHandleResult</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderFile</class>
+		<class>com.jiangyifen.ec2.entity.WorkOrderOperate</class>
+		<class>com.jiangyifen.ec2.entity.WorkflowTransferLog</class>
+		<class>com.jiangyifen.ec2.entity.FileType</class>
+ 
+ 		<class>com.jiangyifen.ec2.entity.KbInfo</class>
+ 		<class>com.jiangyifen.ec2.entity.KbInfoType</class>
+ 		<class>com.jiangyifen.ec2.entity.KickCsrLogoutSetting</class>
+ 		<class>com.jiangyifen.ec2.entity.PushNumStatus</class>
+ 		<class>com.jiangyifen.ec2.entity.SerialNumber</class>
+
+ 		<class>com.jiangyifen.ec2.email.entity.MailConfig</class>
+		<class>com.jiangyifen.ec2.email.entity.MailContact</class>
+  		<class>com.jiangyifen.ec2.email.entity.MailHistory</class>
+ 
+  		<!-- report entity -->
+		<class>com.jiangyifen.ec2.report.entity.AutodialDetail</class>
+		<class>com.jiangyifen.ec2.report.entity.CallCheck</class>
+		<class>com.jiangyifen.ec2.report.entity.EmployeeBusy</class>
+		<class>com.jiangyifen.ec2.report.entity.EmployeeLogin</class>
+		<class>com.jiangyifen.ec2.report.entity.ProjectTask</class>
+		<class>com.jiangyifen.ec2.report.entity.QueueDetail</class>
+		<class>com.jiangyifen.ec2.report.entity.CustomerSatisfactionInvestigate</class>
+		<class>com.jiangyifen.ec2.report.entity.CallStatisticOverview</class>
+		<class>com.jiangyifen.ec2.ui.report.tabsheet.advkpi.pojo.KpiTableColVo</class>
+		
+		<class>com.jiangyifen.ec2.entity.OutlinePool</class>
+		<class>com.jiangyifen.ec2.entity.OutlinePoolOutlineLink</class>
+		
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<properties>
+			<!-- 连接配置 -->
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+<!-- 		
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/asterisk" />
+			<property name="javax.persistence.jdbc.user" value="asterisk" />
+			<property name="javax.persistence.jdbc.password" value="asterisk" />
+ -->
+
+			<!-- 性能配置 -->
+			<!-- Avoids flush being triggered before every query execution. -->
+			<property name="eclipselink.persistence-context.flush-mode"
+				value="COMMIT" />
+
+			<!-- Optimize database writes to use batching. -->
+			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
+
+			<!-- Configure connection pool. -->
+			<property name="eclipselink.jdbc.connections.initial" value="1" />
+			<property name="eclipselink.jdbc.connections.min" value="64" />
+			<property name="eclipselink.jdbc.connections.max" value="64" />
+
+			<!-- Timeout for connection. -->
+			<property name="eclipselink.jdbc.timeout" value="10" />
+
+			<!-- Configure cache size. -->
+			<property name="eclipselink.cache.size.default" value="1000" />
+			<property name="eclipselink.cache.shared.default" value="true" />
+			<!-- 自动外呼的时候,发现自动外呼的项目里的未完成数量会一直增加,按理说自动外呼的时候,不应该存在未完成的资源的,所以问题就出在这里,需要关闭共享和查询缓存
+				<property name="eclipselink.cache.shared.default" value="false"/>
+                <property name="eclipselink.cache.size.default" value="0"/>
+                <property name="eclipselink.cache.type.default" value="NONE"/>
+                <property name="eclipselink.query-results-cache" value="false"/>
+			-->
+
+
+			<!-- EclipseLink should create the database schema automatically -->
+			<!-- <property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc" /> -->
+			<property name="eclipselink.target-database"
+				value="org.eclipse.persistence.platform.database.PostgreSQLPlatform" />
+
+
+			<!-- 创建表的设置 -->
+			<!-- <property name="eclipselink.ddl-generation" value="create-tables" /> -->
+			<!--<property name="eclipselink.ddl-generation" value="create-or-extend-tables" /> -->	<!--  EclipseLink will attempt to create tables. If the table exists, EclipseLink will add any missing columns.  -->
+			
+			<property name="eclipselink.weaving" value="false" />
+
+			<!-- 消息配置 Logging -->
+			<!-- Configure simple SQL logging for demonstration. -->
+			<property name="eclipselink.logging.level" value="OFF" />
+			<!-- <property name="eclipselink.logging.level" value="SEVERE"/> -->
+			<!-- <property name="eclipselink.logging.level" value="FINE" /> -->
+			<property name="eclipselink.logging.thread" value="false" />
+			<property name="eclipselink.logging.session" value="false" />
+			<property name="eclipselink.logging.exceptions" value="false" />
+			<property name="eclipselink.logging.timestamp" value="false" />
+		</properties>
+	</persistence-unit>
+	
+</persistence>

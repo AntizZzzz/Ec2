@@ -1,0 +1,30 @@
+ 
+ 原来使用的短信通道为：
+ 	 id | companyname | description | password | smschannelname |     username      | domain_id 
+	----+-------------+-------------+----------+----------------+-------------------+-----------
+	  1 |             |             | 009755   | junhengSmsSend | SDK-JHK-010-00008 |         1
+	 
+现在替换为：
+ insert into ec2_smsinfo values(1, '万米财富', '', 'A1AE8E481290FA1930641F7A72A6', 'shdiyixinxiSmsSend', '15800824340',1);
+ 
+ update ec2_smsinfo set companyname='万米财富',password='A1AE8E481290FA1930641F7A72A6',smschannelname='shdiyixinxiSmsSend',username='15800824340' where id = 1;
+ 
+ 地址：
+ 	http://118.242.34.94:8989/ec2
+ 	
+ 内部IP：
+ 	192.168.1.118
+ 
+ Mac 地址：
+ 	00:23:7D:E9:52:0C
+ 	
+ 授权座席：
+ 	20
+ 
+ 授权日期：
+ 	2030-01-01 00:00:00
+
+原来的授权码： 	
+	license_count=20
+	license_date=2030-01-01 00\:00\:00
+	license_localmd5=ddd6713faea0a326f8bb65d9736de5c4

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<bean id="channelRedirectService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.ChannelRedirectServiceImpl" />
+
+	<bean id="dialService" class="com.jiangyifen.ec2.service.csr.ami.impl.DialServiceImpl" />
+	
+	<bean id="doBridgeChannelsService" class="com.jiangyifen.ec2.service.csr.ami.impl.DoBridgeChannelsServiceImpl" />
+
+	<bean id="hangupService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.HangupServiceImpl" />
+
+	<bean id="queuePauseService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.QueuePauseServiceImpl" />
+
+	<bean id="queueMemberRelationService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.QueueMemberRelationServiceImpl" />
+
+	<bean id="reloadAsteriskService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.ReloadAsteriskServiceImpl" />
+
+	<bean id="satisfactionInvestigationService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.SatisfactionInvestigationServiceImpl" />
+
+
+	<bean id="userLoginService"
+		class="com.jiangyifen.ec2.service.csr.ami.impl.UserLoginServiceImpl"
+		p:phone2PhoneSettingService-ref="phone2PhoneSettingService" 
+		p:queueService-ref="queueService" 
+		p:queueMemberRelationService-ref="queueMemberRelationService" 
+		p:queuePauseService-ref="queuePauseService" 
+		p:queuePauseRecordService-ref="queuePauseRecordService" 
+		p:sipConfigService-ref="sipConfigService" 
+		p:staticQueueMemberService-ref="staticQueueMemberService" 
+		p:userExtenPersistService-ref="userExtenPersistService" 
+		p:userLoginRecordService-ref="userLoginRecordService" 
+		p:userOutlineService-ref="userOutlineService" 
+		p:userQueueService-ref="userQueueService" 
+		p:userService-ref="userService"
+		p:autoDialoutTaskService-ref="autoDialoutTaskService">
+	</bean>
+
+
+	<!-- 用线程的方式启动AgiServer服务器 -->
+	<bean class="org.asteriskjava.fastagi.AgiServerThread"
+		init-method="startup" destroy-method="shutdown">
+		<property name="agiServer" ref="agiServer" />
+	</bean>
+	<!-- 默认的AgiServer -->
+	<bean id="agiServer" class="org.asteriskjava.fastagi.DefaultAgiServer">
+		<property name="bindPort" value="4573" />
+		<property name="mappingStrategy" ref="mappingStrategy" />
+	</bean>
+	<!-- 服务器脚本映射策略 -->
+	<!-- classpath:fastagi-mapping.properties hello.agi = HelloAgiScript -->
+	<bean id="mappingStrategy" class="org.asteriskjava.fastagi.SimpleMappingStrategy">
+		<property name="mappings">
+			<map>
+				<entry key="autodialAnswered.agi" value-ref="autodialAnswered" />
+				<entry key="blacklist.agi" value-ref="blacklist" />
+				<entry key="checkDialAcrossDomain.agi" value-ref="checkDialAcrossDomain" />
+				<entry key="checkSatisfactionInvestigationAuthority.agi" value-ref="checkSatisfactionInvestigationAuthority" />
+				<entry key="chooseNextIvrAction.agi" value-ref="chooseNextIvrAction" />
+				<entry key="chooseIvr.agi" value-ref="chooseIvr" />
+				<entry key="customerSatisfactionInvestigation.agi" value-ref="customerSatisfactionInvestigation" />
+				<entry key="dialSpecifiedExtenByIvr.agi" value-ref="dialSpecifiedExtenByIvr" />
+				<entry key="getNearestConnectedNumber.agi" value-ref="getNearestConnectedNumber" />
+				<entry key="getResourceManagerExten.agi" value-ref="getResourceManagerExten" />
+				<!-- <entry key="getUserExtenByEmpNo.agi" value-ref="getUserExtenByEmpNo" /> -->
+				<entry key="inQueue.agi" value-ref="inQueue" />
+				<entry key="initUserBasicInfo.agi" value-ref="initUserBasicInfo" />
+				<entry key="ivrLogAdd.agi" value-ref="ivrLogAdd" />
+				<entry key="liAnDaHandleIncomingCall.agi" value-ref="liAnDaHandleIncomingCall" />
+				<entry key="liAnDaIncomingCallToExten.agi" value-ref="liAnDaIncomingCallToExten" />
+				<entry key="popupOutgoingWindow.agi" value-ref="popupOutgoingWindow" />
+				<entry key="queuePickup.agi" value-ref="queuePickup" />
+				<entry key="recordSoundNotice.agi" value-ref="recordSoundNotice" />
+				<entry key="superviseChannelLifeCycleInfo.agi" value-ref="superviseChannelLifeCycleInfo" />
+				<entry key="storeRecoreFilename.agi" value-ref="storeRecoreFilename" />
+				<entry key="showIncomingNotice.agi" value-ref="showIncomingNotice" />
+				<entry key="userChangePassword.agi" value-ref="userChangePassword" />
+				<entry key="userLogout.agi" value-ref="userLogout" />
+				<entry key="userLogin.agi" value-ref="userLogin" />
+				<entry key="codeToPhone.agi" value-ref="codeToPhone" />
+				<entry key="whiteList.agi" value-ref="whiteList" />
+				<!-- chb wokerouter  -->
+				<entry key="wokerouter.agi" value-ref="wokerouter" />
+				
+				<!-- jinht 客服记录状态导航键 -->
+				<entry key="getCustomerServiceRecordState.agi" value-ref="getCustomerServiceRecordState"></entry>
+				<entry key="createCustomerServiceRecordByExten.agi" value-ref="createCustomerServiceRecordByExten"></entry>
+				
+				<!-- chb getQueueRandomUserid  -->
+				<entry key="getQueueRandomUserid.agi" value-ref="getQueueRandomUserid" />
+				<entry key="getUseridByExtennum.agi" value-ref="getUseridByExtennum" />
+				<entry key="parseVoicemailTxt.agi" value-ref="parseVoicemailTxt" />
+				
+				<!-- jinht 客户呼入队列前,检测队列下成员的状态 -->
+				<entry key="checkQueueBusyStatus.agi" value-ref="checkQueueBusyStatus" />
+				<!-- jinht 座席呼出时进行判断分机的注册状态 -->
+				<entry key="checkExtenRegistryStatus.agi" value-ref="checkExtenRegistryStatus" />
+				
+			</map>
+		</property>
+	</bean>
+
+	<bean id="autodialAnswered" class="com.jiangyifen.ec2.fastagi.AutodialAnswered" />
+	<bean id="blacklist" class="com.jiangyifen.ec2.fastagi.BlackList" />
+	<bean id="codeToPhone" class="com.jiangyifen.ec2.fastagi.CodeToPhone" />
+	<bean id="checkDialAcrossDomain" class="com.jiangyifen.ec2.fastagi.CheckDialAcrossDomain" />
+	<bean id="checkSatisfactionInvestigationAuthority" class="com.jiangyifen.ec2.fastagi.CheckSatisfactionInvestigationAuthority" />
+	<bean id="chooseNextIvrAction" class="com.jiangyifen.ec2.fastagi.ChooseNextIvrAction" />
+	<bean id="chooseIvr" class="com.jiangyifen.ec2.fastagi.ChooseIvr" />
+	<bean id="customerSatisfactionInvestigation" class="com.jiangyifen.ec2.fastagi.CustomerSatisfactionInvestigation" />
+	<bean id="dialSpecifiedExtenByIvr" class="com.jiangyifen.ec2.fastagi.DdialSpecifiedExtenByIvr" />
+	<bean id="getNearestConnectedNumber" class="com.jiangyifen.ec2.fastagi.GetNearestConnectedNumber" />
+	<bean id="getResourceManagerExten" class="com.jiangyifen.ec2.fastagi.GetResourceManagerExten" />
+	<!-- <bean id="getUserExtenByEmpNo" class="com.jiangyifen.ec2.fastagi.GetUserExtenByEmpNo"/> -->
+	<bean id="inQueue" class="com.jiangyifen.ec2.fastagi.InQueue" />
+	<bean id="initUserBasicInfo" class="com.jiangyifen.ec2.fastagi.InitUserBasicInfo" />
+	<bean id="ivrLogAdd" class="com.jiangyifen.ec2.fastagi.IvrLogAdd" />
+	<bean id="liAnDaHandleIncomingCall" class="com.jiangyifen.ec2.fastagi.andali.LiAnDaHandleIncomingCall" />
+	<bean id="liAnDaIncomingCallToExten" class="com.jiangyifen.ec2.fastagi.andali.LiAnDaIncomingCallToExten" />
+	<bean id="popupOutgoingWindow" class="com.jiangyifen.ec2.fastagi.PopupOutgoingWindow" />
+	<bean id="queuePickup" class="com.jiangyifen.ec2.fastagi.QueuePickup" />
+	<bean id="recordSoundNotice" class="com.jiangyifen.ec2.fastagi.RecordSoundNotice" />
+	<bean id="superviseChannelLifeCycleInfo" class="com.jiangyifen.ec2.fastagi.SuperviseChannelLifeCycleInfo" />
+	<bean id="storeRecoreFilename" class="com.jiangyifen.ec2.fastagi.StoreRecoreFilename" />
+	<bean id="showIncomingNotice" class="com.jiangyifen.ec2.fastagi.ShowIncomingNotice" />
+	<bean id="userLogout" class="com.jiangyifen.ec2.fastagi.UserLogout" />
+	<bean id="userChangePassword" class="com.jiangyifen.ec2.fastagi.UserChangePassword" />
+	<bean id="userLogin" class="com.jiangyifen.ec2.fastagi.UserLogin" />
+	<bean id="whiteList" class="com.jiangyifen.ec2.fastagi.WhiteList" />
+	<!-- chb wokerouter -->
+	<bean id="wokerouter" class="com.jiangyifen.ec2.fastagi.WokeSperouter" />
+	
+	<!-- 客服记录状态导航 -->
+	<bean id="getCustomerServiceRecordState" class="com.jiangyifen.ec2.fastagi.GetCustomerServiceRecordState"></bean>
+	<bean id="createCustomerServiceRecordByExten" class="com.jiangyifen.ec2.fastagi.CreateCustomerServiceRecordByExten"></bean>
+	
+	<!-- chb getQueueRandomUserid  -->
+	<bean id="getQueueRandomUserid" class="com.jiangyifen.ec2.fastagi.GetQueueRandomUserid" />
+	<bean id="getUseridByExtennum" class="com.jiangyifen.ec2.fastagi.GetUseridByExtennum" />
+	<bean id="parseVoicemailTxt" class="com.jiangyifen.ec2.fastagi.ParseVoicemailTxt" />
+	
+	<!-- jinht 客户呼入队列前,检测队列下成员的状态 -->
+	<bean id="checkQueueBusyStatus" class="com.jiangyifen.ec2.fastagi.CheckQueueBusyStatus" />
+	<!-- jinht 座席呼出时进行判断分机的注册状态 -->
+	<bean id="checkExtenRegistryStatus" class="com.jiangyifen.ec2.fastagi.CheckExtenRegistryStatus" />
+	
+</beans>

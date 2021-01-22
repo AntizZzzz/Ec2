@@ -1,0 +1,33 @@
+
+
+
+
+-- 界面呼出
+
+ChannelLifeCycle [selfChannel=SIP/800001-0000005f, selfUniqueid=1407832268.103, bridgedChannel=null, bridgedUniqueid=null, connectedlinenum=800001, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=null, originateDialTime=null, ringStateTime=null, ringingStateTime=2014-08-12 16:31:09.797, upStateTime=null, bridgedTime=null, downStateTime=2014-08-12 16:31:09.682, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+ChannelLifeCycle [selfChannel=SIP/800001-0000005f, selfUniqueid=1407832268.103, bridgedChannel=null, bridgedUniqueid=null, connectedlinenum=800001, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=13816760398, originateDialTime=2014-08-12 16:31:24.623, ringStateTime=null, ringingStateTime=2014-08-12 16:31:09.797, upStateTime=2014-08-12 16:31:23.505, bridgedTime=null, downStateTime=2014-08-12 16:31:09.682, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+ChannelLifeCycle [selfChannel=SIP/800001-0000005f, selfUniqueid=1407832268.103, bridgedChannel=SIP/88860847041-00000060, bridgedUniqueid=1407832283.104, connectedlinenum=800001, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=13816760398, originateDialTime=2014-08-12 16:31:24.623, ringStateTime=null, ringingStateTime=2014-08-12 16:31:09.797, upStateTime=2014-08-12 16:31:23.505, bridgedTime=2014-08-12 16:31:44.801, downStateTime=2014-08-12 16:31:09.682, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+--呼入
+
+
+ChannelLifeCycle [selfChannel=SIP/800001-00000062, selfUniqueid=1407832982.106, bridgedChannel=null, bridgedUniqueid=null, connectedlinenum=02160847042, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=null, originateDialTime=null, ringStateTime=null, ringingStateTime=2014-08-12 16:43:03.891, upStateTime=null, bridgedTime=null, downStateTime=2014-08-12 16:43:03.789, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+ChannelLifeCycle [selfChannel=SIP/800001-00000062, selfUniqueid=1407832982.106, bridgedChannel=SIP/88860847041-00000061, bridgedUniqueid=1407832980.105, connectedlinenum=02160847042, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=null, originateDialTime=null, ringStateTime=null, ringingStateTime=2014-08-12 16:43:03.891, upStateTime=2014-08-12 16:43:19.311, bridgedTime=2014-08-12 16:43:19.321, downStateTime=2014-08-12 16:43:03.789, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+
+-- 话机呼出
+ChannelLifeCycle [selfChannel=SIP/800001-0000005c, selfUniqueid=1407831346.100, bridgedChannel=null, bridgedUniqueid=null, connectedlinenum=null, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=13816760398, originateDialTime=2014-08-12 16:15:48.339, ringStateTime=2014-08-12 16:15:47.145, ringingStateTime=null, upStateTime=null, bridgedTime=null, downStateTime=2014-08-12 16:15:47.144, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
+
+ChannelLifeCycle [selfChannel=SIP/800001-0000005c, selfUniqueid=1407831346.100, bridgedChannel=SIP/88860847041-0000005d, bridgedUniqueid=1407831347.101, connectedlinenum=13816760398, connectedlinename=null, connectedChannel=null, connectedUniqueid=null, destlinenum=13816760398, originateDialTime=2014-08-12 16:15:48.339, ringStateTime=2014-08-12 16:15:47.145, ringingStateTime=null, upStateTime=2014-08-12 16:16:08.606, bridgedTime=2014-08-12 16:16:08.610, downStateTime=2014-08-12 16:15:47.144, rsrvdStateTime=null, offHookStateTime=null, dialingStateTime=null, busyStateTime=null, dialingOffhookStateTime=null, preRingStateTime=null]
+
+
